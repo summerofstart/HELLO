@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高度な量子回路エディター</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>高度な量子回路エディター</h1>
+        
+        <div class="toolbar">
+            <div class="gate-button" draggable="true" data-gate="H">Hゲート</div>
+            <div class="gate-button" draggable="true" data-gate="X">Xゲート</div>
+            <div class="gate-button" draggable="true" data-gate="Y">Yゲート</div>
+            <div class="gate-button" draggable="true" data-gate="Z">Zゲート</div>
+            <div class="gate-button" draggable="true" data-gate="S">Sゲート</div>
+            <div class="gate-button" draggable="true" data-gate="T">Tゲート</div>
+            <div class="gate-button" draggable="true" data-gate="Rx">Rxゲート</div>
+            <div class="gate-button" draggable="true" data-gate="Ry">Ryゲート</div>
+            <div class="gate-button" draggable="true" data-gate="Rz">Rzゲート</div>
+            <div class="gate-button" draggable="true" data-gate="CNOT">CNOT</div>
+            <div class="gate-button" draggable="true" data-gate="CZ">CZ</div>
+            <div class="gate-button" draggable="true" data-gate="SWAP">SWAP</div>
+        </div>
+
+        <div id="circuit" class="circuit-grid">
+            <!-- JavaScriptで動的に生成 -->
+        </div>
+
+        <div class="controls">
+            <button class="action-button" onclick="undo()">元に戻す</button>
+            <button class="action-button" onclick="redo()">やり直し</button>
+            <button class="action-button" onclick="clearCircuit()">クリア</button>
+            <button class="action-button" onclick="simulate()">シミュレート</button>
+            <button class="action-button" onclick="exportToQASM()">QASMエクスポート</button>
+        </div>
+
+        <div class="output-container">
+            <div class="output-section">
+                <h3>QASM出力</h3>
+                <textarea id="qasmOutput" readonly></textarea>
+            </div>
+            <div class="output-section">
+                <h3>シミュレーション結果</h3>
+                <div id="simulationResult" class="simulation-result">
+                    結果はここに表示されます
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
